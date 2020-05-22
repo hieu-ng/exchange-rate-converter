@@ -6,6 +6,7 @@ const amountCurrency2 = document.getElementById('amount-two');
 const rateEl = document.getElementById('rate');
 const swap = document.getElementById('swap');
 
+// Fetch exchange range and update the DOM
 function convert() {
     const currency_one = amountCurrency1.value();
     const currency_two = amountCurrency2.value();
@@ -13,3 +14,11 @@ function convert() {
         .then(res => res.json())
         .then(data => {})
 }
+
+// Event listener
+currency1.addEventListener('change', convert);
+amountCurrency1urrency1.addEventListener('input', convert);
+currency2.addEventListener('change', convert);
+amountCurrency2.addEventListener('input', convert);
+
+convert();
