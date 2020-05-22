@@ -12,12 +12,18 @@ function convert() {
     const currency_two = amountCurrency2.value();
     fetch(`https://api.exchangerate-api.com/v4/latest/${currency_one}`)
         .then(res => res.json())
-        .then(data => {})
+        .then(data => {
+            const rate = data.rates[currency_two];
+            rateEl.innerText =
+                `1 ${currency_one} = ${rate} ${currency_two}`;
+            amountCurrency2 = (amountCurrency1 * rate)
+                .toFixed(2);
+        })
 }
 
 // Event listener
 currency1.addEventListener('change', convert);
-amountCurrency1urrency1.addEventListener('input', convert);
+amountCurrency1.addEventListener('input', convert);
 currency2.addEventListener('change', convert);
 amountCurrency2.addEventListener('input', convert);
 
