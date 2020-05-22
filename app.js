@@ -3,6 +3,9 @@ const amountCurrency1 = document.getElementById('amount-one');
 const currency2 = document.getElementById('currency-two');
 const amountCurrency2 = document.getElementById('amount-two');
 
+const rateEl = document.getElementById('rate');
+const swap = document.getElementById('swap');
+
 function convert() {
     const currency_one = amountCurrency1.value();
     const currency_two = amountCurrency2.value();
