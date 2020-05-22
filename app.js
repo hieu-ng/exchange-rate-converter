@@ -7,4 +7,6 @@ function convert() {
     const currency_one = amountCurrency1.value();
     const currency_two = amountCurrency2.value();
     fetch(`https://api.exchangerate-api.com/v4/latest/${currency_one}`)
+        .then(res => res.json())
+        .then(data => {})
 }
