@@ -27,4 +27,11 @@ amountCurrency1.addEventListener('input', convert);
 currency2.addEventListener('change', convert);
 amountCurrency2.addEventListener('input', convert);
 
+swap.addEventListener('click', () => {
+    const temp = currency1.value;
+    currency1.value = currency2.value;
+    currency2.value = temp;
+    convert();
+})
+
 convert();
